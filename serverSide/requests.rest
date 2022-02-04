@@ -1,0 +1,32 @@
+GET http://localhost:3001/gym/
+
+###
+
+POST http://localhost:3001/gym/new
+Content-type: application/json
+
+{
+    "text": "db bench",
+    "date": "1/23/22",
+    "type": "chest"
+}
+
+###
+
+DELETE  http://localhost:3001/gym/delete/61edfd8373be9bbbef8cf0b0
+
+###
+
+GET http://localhost:3001/gym/complete/61edfd8373be9bbbef8cf0b0
+
+### 
+
+PUT http://localhost:3001/gym/update/61ef2c7915b1d694780042b4
+Content-Type: application/json
+
+{
+	"text": "body press",
+    "type": "chest",
+    "sets": "4",
+    "reps": "10"
+}

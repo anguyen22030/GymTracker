@@ -1,0 +1,249 @@
+:root {
+	--primary: #D81E5B;
+	--secondary: #8A4EFC;
+	--light: #EEE;
+	--light-alt: #61759b;
+	--dark: #131A26;
+	--dark-alt: #202B3E;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+
+	font-family: "Monaco", monospace;
+}
+
+body {
+	background-color: var(--dark-alt);
+	color: var(--light);
+}
+
+.App {
+	padding: 32px;
+}
+
+h1 {
+	font-size: 40px;
+	font-weight: 700;
+	margin-bottom: 32px;
+}
+
+h4 {
+	font-size: 25px;
+	color: var(--light);
+	font-weight: 400;
+	margin-bottom: 0px;
+	opacity: 0.6;
+}
+.workout{
+	position: relative;
+	background-color: var(--dark);
+	padding: 16px;
+	border-radius: 16px;
+	display: flex;
+	flex-direction: column;
+	align-items: left;
+	transition: 0.5s;
+	cursor: pointer;
+	margin-bottom: 16px;
+	
+}
+.workout.is-done {
+	text-decoration: line-through;
+}
+.workout:hover {
+	opacity: 0.9;
+}
+
+/* .todo {
+	position: relative;
+	background-color: var(--dark);
+	padding: 16px;
+	border-radius: 16px;
+	display: flex;
+	align-items: center;
+	transition: 0.5s;
+	cursor: pointer;
+	margin-bottom: 16px;
+}
+
+.todo:hover {
+	opacity: 0.8;
+}
+
+.todo .checkbox {
+	width: 20px;
+	height: 20px;
+	margin-right: 16px;
+	border-radius: 50%;
+	background-color: var(--dark-alt);
+	background-image: linear-gradient(to bottom, transparent, transparent);
+	transition: 0.4s;
+}
+
+.todo.is-complete .checkbox {
+	background-color: var(--primary);
+	background-image: linear-gradient(to bottom, var(--primary), var(--secondary));
+}
+
+.todo .text {
+	font-size: 20px;
+}
+
+.todo.is-complete .text {
+	text-decoration: line-through;
+}
+*/
+.workout .delete-workout {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 16px;
+	color: var(--light);
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	background-color: #AF1E2D;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: 700;
+}
+
+.workout .add-workout {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 50px;
+	color: var(--light);
+	width: 110px;
+	height: 24px;
+	border-radius: 12px;
+	background-color: darkgreen;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: 700;
+}
+.container{
+	margin-right : 200px;
+	overflow:auto;
+}
+/*
+.todo .complete {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right: 50px;
+	color: var(--light);
+	width: 100px;
+	height: 25px;
+	border-radius: 12px;
+	background-color: darkgreen;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-weight: 700;
+}
+*/
+.addPopup {
+	position: fixed;
+	bottom: 32px;
+	right: 32px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	width: 64px;
+	height: 64px;
+	border-radius: 999px;
+	font-size: 28px;
+	font-weight: 900;
+	color: var(--light);
+	background-color: var(--primary);
+	background-image: linear-gradient(to bottom right, var(--primary), var(--secondary));
+	cursor: pointer;
+}
+
+.popup {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+
+	width: 100%;
+	max-width: 400px;
+	background-color: var(--light);
+	padding: 32px;
+	border-radius: 16px;
+	box-shadow: 0px 4px 32px var(--dark);
+}
+
+.closePopup {
+	position: absolute;
+	top: 16px;
+	right: 16px;
+	width: 20px;
+	height: 20px;
+	font-size: 20px;
+	color: var(--dark);
+	cursor: pointer;
+}
+
+.popup h3 {
+	color: var(--dark);
+	margin-bottom: 16px;
+	font-weight: 400;
+	text-transform: uppercase;
+}
+
+.add-todo-exercise {
+	appearance: none;
+	outline: none;
+	border: none;
+	background-color: #FFF;
+	padding: 16px;
+	border-radius: 16px;
+	width: 100%;
+	box-shadow: 0px 2px 24px rgba(0, 0, 0, 0.2);
+	font-size: 20px;
+	margin-bottom: 1px;
+}
+.add-todo-reps {
+	appearance: none;
+	outline: none;
+	border: none;
+	background-color: #FFF;
+	padding: 16px;
+	border-radius: 16px;
+	width: 30%;
+	box-shadow: 0px 2px 24px rgba(0, 0, 0, 0.2);
+	font-size: 20px;
+	margin-bottom: 1px;
+}
+#datePicker{
+	appearance: none;
+	outline: none;
+	border: none;
+	background-color: #FFF;
+	padding: 16px;
+	border-radius: 16px;
+	width: 50%;
+	box-shadow: 0px 2px 24px rgba(0, 0, 0, 0.2);
+	font-size: 20px;
+	margin-bottom: 16px;
+}
+.button {
+	padding: 16px 32px;
+	border-radius: 999px;
+	background-image: linear-gradient(to right, var(--primary), var(--secondary));
+	display: inline-block;
+	font-weight: 700;
+	text-transform: uppercase;
+	font-size: 18px;
+	margin-top: 16px;
+	text-align: center;
+	cursor: pointer;
+}
